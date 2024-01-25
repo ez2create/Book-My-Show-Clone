@@ -13,6 +13,7 @@ const NavbarLg = () => {
         <BiSearch />
         <input
           type="search"
+          placeholder='Search for movies, events, plays, sports and activites'
           className=" border-none focus:outline-none bg-transparent"/>
           </div>
       </div>
@@ -46,6 +47,7 @@ const NavbarMd = () => {
         <BiSearch />
         <input
           type="search"
+          placeholder='Search for movies, events, plays, sports and activites'
           className="w-full border-none focus:outline-none bg-transparent"/>
           </div>
       </div>
@@ -54,7 +56,7 @@ const NavbarMd = () => {
 }
 const Navbarsm = () => {
   return (
-    <div className=' flex items-center justify-between px-4 py-2.5 bg-gray-700'>
+    <div className=' flex items-center justify-between px-4 py-2.5'style={{backgroundColor:"#3F4055"}}>
       <div>
         <h1 className='font-bold text-lg  text-white'>It All Starts Here!</h1>
         <span className='text-gray-400 text-xs flex items-center hover:text-white cursor-pointer'>Gurgaon <BiChevronDown/> </span>
@@ -70,13 +72,13 @@ const Navbarsm = () => {
 const NavbarComponents = () => {
   return (
     <div>
-    <div className='md:hidden  bg-gray-700' >
+    <div className='md:hidden 'style={{backgroundColor:"#3F4055"}} >
       <Navbarsm/>
     </div>
-    <div className='hidden md:flex lg:hidden  bg-gray-700'>
+    <div className='hidden md:flex lg:hidden 'style={{backgroundColor:"#3F4055"}}>
       <NavbarMd/>
     </div>
-    <div className='hidden lg:flex  bg-gray-700'>
+    <div className='hidden lg:flex 'style={{backgroundColor:"#3F4055"}}>
       <NavbarLg/>
     </div>
     </div>

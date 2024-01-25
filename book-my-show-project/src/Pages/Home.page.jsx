@@ -18,7 +18,7 @@ const HomePage = () => {
 
     const requestRecommendedMovies= async ()=>{
     const getRecommendedMovies= await axios.get(
-      "https://api.themoviedb.org/3/movie/top_rated?api_key=8d901cdd2cbe025215a71567913f90a5");
+      "/movie/top_rated");
       setrecommendedMovies(getRecommendedMovies.data.results);
       }
       requestRecommendedMovies();
@@ -27,7 +27,7 @@ const HomePage = () => {
 
     const requestpremiumMovies= async ()=>{
     const getpremiumMovies= await axios.get(
-      "https://api.themoviedb.org/3/movie/popular?api_key=8d901cdd2cbe025215a71567913f90a5");
+      "/movie/popular");
       setpremiumMovies(getpremiumMovies.data.results);
       }
       requestpremiumMovies();
@@ -36,7 +36,7 @@ const HomePage = () => {
 
     const requestonlineStreamingMovies= async ()=>{
     const getonlineStreamingMovies= await axios.get(
-      "https://api.themoviedb.org/3/movie/upcoming?api_key=8d901cdd2cbe025215a71567913f90a5");
+      "/movie/upcoming");
       setonlineStreamingMovies(getonlineStreamingMovies.data.results);
       }
       requestonlineStreamingMovies();

@@ -6,10 +6,10 @@ const Poster = (props) => {
     <Link to={`/Movies/${props.id}`} >
       <div className='gap-5 px-4'>
         <div className=''>
-          <img src={`https://image.tmdb.org/t/p/original${props.poster_path}`} alt="Movie poster" 
-          className='w-52 h-full rounded-md'/>
+          <img src={`https://image.tmdb.org/t/p/original${props.poster_path}`}  alt="Movie poster" 
+          className='w-52 h-full rounded-md cursor-pointer'/>
         </div><br />
-        <h3 className={`text-sm font-sans text-slate-800 ${props.isDark ?"text-white": "text-black"}`}>
+        <h3 className={`text-sm font-sans text-slate-800 ${props.isDark ?"text-white": "text-black  cursor-pointer"}`}>
           {props.original_title}
         </h3>
       </div>
