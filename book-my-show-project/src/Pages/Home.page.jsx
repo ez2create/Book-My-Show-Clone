@@ -1,16 +1,49 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 import DefaultLayoutHOC from '../Layouts/Default.layout'
 import HeroCaroucel from '../Components/HeroCaroucel/HeroCaroucelComponent'
 import EntertenmentCardSlider from '../Components/entertenment/EntertenmentCardComponents'
 import PosterSlider from '../Components/PsterSlider/PosterSliderComponent'
+import axios from 'axios'
 
-const[recommendedMovies,setrecommendedMovies]= useState([])
-const [premiumMovies,setpremiumMovies]= useState([])
-const[onlineStreamingMovies,setonlineStreamingMovies]=useState([])
+
 
 
 const HomePage = () => {
+  const[recommendedMovies,setrecommendedMovies]= useState([])
+  const [premiumMovies,setpremiumMovies]= useState([])
+  const[onlineStreamingMovies,setonlineStreamingMovies]=useState([])
+
+  useEffect(()=>{
+
+    const requestRecommendedMovies= async ()=>{
+    const getRecommendedMovies= await axios.get(
+      "/movie/top_rated");
+      setrecommendedMovies(getRecommendedMovies.data.results);
+      }
+      requestRecommendedMovies();
+  },[]);
+    useEffect(()=>{
+
+    const requestpremiumMovies= async ()=>{
+    const getpremiumMovies= await axios.get(
+      "/movie/popular");
+      setpremiumMovies(getpremiumMovies.data.results);
+      }
+      requestpremiumMovies();
+  },[]);
+  useEffect(()=>{
+
+    const requestonlineStreamingMovies= async ()=>{
+    const getonlineStreamingMovies= await axios.get(
+      "/movie/upcoming");
+      setonlineStreamingMovies(getonlineStreamingMovies.data.results);
+      }
+      requestonlineStreamingMovies();
+  },[]);
+
+
+
   return (
     <>
     <HeroCaroucel/>
@@ -21,8 +54,8 @@ const HomePage = () => {
       <div className='container mx-auto px-4 md:px-12 my-8'>
         <PosterSlider 
         title="Recommended Movies"
-        subject="List Of Recommended Movies"
-        poster={recommendedMovies}
+        subTitle="List Of Recommended Movies"
+        posters={recommendedMovies}
         isDark={false}/>
       </div>
       <div className='bg-premier-800 py-12'>
@@ -36,8 +69,8 @@ const HomePage = () => {
           <div className='container mx-auto px-4 md:px-12 my-8'>
         <PosterSlider 
         title="Premium Movies"
-        subject="Brand New Release Every Friday"
-        poster={premiumMovies}
+        subTitle="Brand New Release Every Friday"
+        posters={premiumMovies}
         isDark={true}/>
           </div>
         </div>
@@ -45,8 +78,8 @@ const HomePage = () => {
        <div className='container mx-auto px-4 md:px-12 my-8'>
         <PosterSlider 
         title="Online Streaming Movies"
-        subject="Online Streaming Events"
-        poster={onlineStreamingMovies}
+        subTitle="Online Streaming Events"
+        posters={onlineStreamingMovies}
         isDark={false}
         />
       </div>
@@ -54,4 +87,4 @@ const HomePage = () => {
   )
 }
 
-export default DefaultLayoutHOC(HomePage);
+export default DefaultLayoutHOC(HomePage); 
