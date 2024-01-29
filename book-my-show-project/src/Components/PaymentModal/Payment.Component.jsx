@@ -1,6 +1,6 @@
 import React from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 
 const PaymentModel = ({ setIsOpen, isOpen, price }) => {
   const closeModal = () => {
@@ -43,7 +43,7 @@ const PaymentModel = ({ setIsOpen, isOpen, price }) => {
             <div className="fixed inset-0 bg-black/25" />
           </Transition.Child>
 
-          <div className="fixed inset-0 overflow-y-auto">
+          <div className="fixed inset-0 overflow-y-auto ">
             <div className="flex min-h-full items-center justify-center p-4 text-center">
               <Transition.Child
                 as={Fragment}

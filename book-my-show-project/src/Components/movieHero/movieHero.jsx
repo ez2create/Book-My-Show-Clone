@@ -50,8 +50,8 @@ const MovieHero = () => {
         <div
           className="relative hidden w-full lg:block"
           style={{ height: "30rem" }}>
-          <div className="absolute z-10 w-full h-full" style={{background: "linear-gradient(90deg, rgb(34, 34, 34) 24.95%, rgb(34, 34, 34) 38.3%, rgba(34, 34, 34, 0.04) 97.47%, rgb(34, 34, 34) 100%);"}} > </div>
-      <div className="absolute z-30 left-24 top-10 flex items-center gap-10" >
+          <div className="absolute w-full h-full" style={{background: "linear-gradient(90deg, rgb(34, 34, 34) 24.95%, rgb(34, 34, 34) 38.3%, rgba(34, 34, 34, 0.04) 97.47%, rgb(34, 34, 34) 100%);"}} > </div>
+      <div className="absolute left-24 top-10 flex items-center gap-10" >
               <div className="w-64 h-96">
                 <img
                   src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
